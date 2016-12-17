@@ -1,0 +1,8 @@
+1)Factory pattern:
+
+Classes involved:
+StackUsingLinkedList
+StackUsingQueue
+FactoryPattern
+Admin (main)
+Client
