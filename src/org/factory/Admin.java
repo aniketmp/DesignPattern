@@ -1,5 +1,5 @@
 package org.factory;
-
+//Like Interfaces makes server independent of service provider , factory provide Client independent of Services
 public class Admin {
 	public static void main(String arg[])
 	{

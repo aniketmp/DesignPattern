@@ -10,7 +10,7 @@ public static Stack getInstance() {
 		Properties p=new Properties();
 		try {
 			
-			p.load(new FileInputStream("C:\\Users\\Admin\\git\\DesignPattern\\DesignPattern\\src\\resources\\config.properties"));
+			p.load(new FileInputStream("C:\\Users\\Admin\\git\\DesignPattern\\src\\resources\\config.properties"));
 			String className=p.getProperty("StackImpl");
 			Class<?> clazz = Class.forName(className);
 			Object stackImpl = clazz.newInstance();			;

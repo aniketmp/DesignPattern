@@ -28,7 +28,7 @@ public class SimpleStackFactory {
 		Stack s=null;
 		Properties p=new Properties();
 		try {
-			p.load(new FileInputStream("C:\\Users\\Admin\\git\\DesignPattern\\DesignPattern\\src\\resources\\config.properties"));
+			p.load(new FileInputStream("C:\\Users\\Admin\\git\\DesignPattern\\src\\resources\\config.properties"));
 			int q=Integer.parseInt(p.getProperty("QOS"));
 			s=getInstance(q);
 			
