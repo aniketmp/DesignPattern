@@ -5,6 +5,10 @@ package org.decorater;
  * 2)The decorator pattern applies when there is a need to dynamically add as well as remove responsibilities to a class, and when subclassing would be impossible due to the large number of subclasses that could result.
  * 3)Critical requirement of Decorator pattern is that a decorated object can stand in place of original object i.e. it can be passed when a method expects original object.
  * 4)Decorator adds functionality before or after delegating the task to the original object
+ * 
+ * In java all the InputStream/OutputStream are the implementation of decorator pattern.
+ * eg new ObjectInputStream(new FileInputStream("")).readObject();
+ * This is another benifit of decorator that you can decorate all the objects in one line syntax.   
  *   
  * In order to show you, how to implement Decorator pattern, let me first explain requirements. Do we need to create software for calculating the price for a Sandwich, yummy... no? Since the customer can customize sandwich by asking extra cheese or extra fillings, you also need to include the cost of those items in the final price of Sandwich. Since this customization can vary a lot among different customers and offer from a shop, creating classes for different types of Sandwich with different fillings or extras e.g. BrownBreadSandWithCheese or WhiteBreaSandwitchWithCheeseAndTomato will just clutter the code with lots of endless small classes. 
    Now this problem looks a natural fit for applying Decorator pattern because we have a base object Sandwich, which can be decorated with extra cheese and fillings. By using Decorator pattern, you can extend the functionality of Sandwich at runtime, based upon customer's request, which is impossible with Inheritance until you have a specific class for every possible customer request. 

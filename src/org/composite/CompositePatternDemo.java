@@ -1,4 +1,4 @@
-package com.composite;
+package org.composite;
 
 import java.io.File;
 import java.util.ArrayList;
