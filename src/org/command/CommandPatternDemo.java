@@ -1,7 +1,6 @@
 package org.command;
 /*Commands are an object-oriented replacement for callbacks.
- *It allows you to decouples the requester of an action from the object that actually performs the action.
- *
+
  Let's design Remote control which control various device given by the client. 
 */
 
@@ -15,6 +14,7 @@ enum Action
 }
 interface Command
 {
+	//This method invokes function which client has overridden. 
 	public void execute();
 	public void revert();
 }
@@ -170,7 +170,7 @@ class RemoteControl
 			System.out.println("No command recognized!");
 			return;
 		}
-		//Server then execute command at certain point of time as a result of either event happens or time elapsed.
+		//Server then execute command at certain point of time as a result of either event happens or time elapsed.		
 		command[slot].execute();
 	}
 	//Server can undu this command.
@@ -198,14 +198,9 @@ public class CommandPatternDemo
 	public static void main(String[] args) throws NumberFormatException, IOException 
 	{
 		
-		for(int i=1;i<7;i++)
-		{
-			 //Client creates command
-			 Command command=createCommand(i);
-		     //and pass it to server//
-		     remoteControl.setCommand(i,command);
-		     
-		}
+		Client c=new Client();
+		//client has a reference of server
+		c.startClient(remoteControl);
 		 do
 	      {        
 		        System.out.print("========Home Automation Remote Control.============ \n");
@@ -231,8 +226,23 @@ public class CommandPatternDemo
 			     remoteControl.buttPressed(choice);
 		       
 		   }while(choice!=7);  
+	}	
+
+}
+class Client
+{
+	public void startClient(RemoteControl remoteControl)
+	{
+		for(int i=1;i<7;i++)
+		{
+			 //Client creates command
+			 Command command=createCommand(i);
+		     //and pass it to server//
+		     remoteControl.setCommand(i,command);
+		     
+		}
 	}
-	public static Command createCommand(int choice)
+	private Command createCommand(int choice)
 	{
 		Command command=null;
 		switch(choice)
@@ -247,5 +257,5 @@ public class CommandPatternDemo
 		}
 		return command;
 	}
-
 }
+
