@@ -89,5 +89,6 @@ public class Singleton {
 	}
 	public static void main(String[] args) {
 		Singleton singletonObj=Singleton.getInstance();
+		
 	}
 }
