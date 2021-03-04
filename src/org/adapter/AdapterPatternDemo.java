@@ -4,7 +4,8 @@ import java.util.Enumeration;
 import java.util.Iterator;
 
 
-//Adapter Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+//Adapter Convert the interface of a class into another interface clients expect.
+//Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
 ///An adapter helps two incompatible interfaces to work together
 interface Enumerable
 {
